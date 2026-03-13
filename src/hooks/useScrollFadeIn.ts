@@ -1,21 +1,26 @@
-import { useEffect } from "react";
+import { useRef, useEffect, useState, type RefObject } from "react";
 
-export function useScrollFadeIn() {
+export function useFadeIn<T extends HTMLElement = HTMLDivElement>(): [RefObject<T | null>, boolean] {
+  const ref = useRef<T | null>(null);
+  const [visible, setVisible] = useState(false);
+
   useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+
     const observer = new IntersectionObserver(
-      (entries) => {
-        for (const entry of entries) {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
-          }
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setVisible(true);
+          observer.disconnect();
         }
       },
-      { threshold: 0.1 }
+      { threshold: 0.05, rootMargin: "0px 0px -30px 0px" }
     );
 
-    const elements = document.querySelectorAll(".fade-in");
-    elements.forEach((el) => observer.observe(el));
-
+    observer.observe(el);
     return () => observer.disconnect();
   }, []);
+
+  return [ref, visible];
 }
