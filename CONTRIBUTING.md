@@ -46,6 +46,8 @@ Antes de aprovar um PR, verifique:
 
 ## Setup de Desenvolvimento
 
+Stack: Vite + React (landing page)
+
 ```bash
 git clone https://github.com/hlemos1/guard-app.git
 cd guard-app
