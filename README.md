@@ -2,7 +2,7 @@
 
 > Landing page da Guard -- marca de equipamentos e acessorios para artes marciais
 
-[![CI](https://github.com/institutoveigacabral-maker/guard-app/actions/workflows/ci.yml/badge.svg)](https://github.com/institutoveigacabral-maker/guard-app/actions/workflows/ci.yml)
+[![CI](https://github.com/hlemos1/guard-app/actions/workflows/ci.yml/badge.svg)](https://github.com/hlemos1/guard-app/actions/workflows/ci.yml)
 [![TypeScript](https://img.shields.io/badge/TypeScript-100%25-007ACC?style=flat-square&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 
 ## Stack
@@ -18,7 +18,7 @@
 ## Quick Start
 
 ```bash
-git clone https://github.com/institutoveigacabral-maker/guard-app.git
+git clone https://github.com/hlemos1/guard-app.git
 cd guard-app
 npm install
 npm run dev
